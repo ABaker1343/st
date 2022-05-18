@@ -5,8 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "UbuntuMonoLigaturized:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 2;
+
+/* background opacity */
+float alpha = 0.7;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -93,9 +96,6 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
-float alpha = 0.8;
-
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
@@ -113,7 +113,7 @@ static const char *colorname[] = {
 	"red",
 	"green",
 	"yellow",
-	"#5c5cff",
+	"#5594f6", // bold blue
 	"magenta",
 	"cyan",
 	"white",
@@ -125,6 +125,9 @@ static const char *colorname[] = {
 	"#555555",
 	"gray90", /* default foreground colour */
 	"black", /* default background colour */
+    "#222222", // 260 dark grey
+    "#ffffff", // 261 white
+    "#fafafa"  // 262 background color
 };
 
 
@@ -132,10 +135,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
+unsigned int defaultfg = 261;
+unsigned int defaultbg = 260;
 unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
@@ -204,8 +207,12 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+
+    { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+    { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+
+    { ShiftMask,            XK_F10,         changeAlpha,    {.f = 0.05 } },
+    { ShiftMask,            XK_F9,          changeAlpha,    {.f = -0.05 } },
 };
 
 /*
