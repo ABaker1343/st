@@ -9,7 +9,7 @@ static char *font = "UbuntuMonoLigaturized:pixelsize=20:antialias=true:autohint=
 static int borderpx = 2;
 
 /* background opacity */
-float alpha = 0.7;
+float alpha = 0.6;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -97,8 +97,9 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	/* 8 normal colors */
+/* old colors
+ * static const char *colorname[] = {
+	//8 normal colors
 	"black",
 	"red3",
 	"green3",
@@ -108,7 +109,7 @@ static const char *colorname[] = {
 	"cyan3",
 	"gray90",
 
-	/* 8 bright colors */
+	//8 bright colors
 	"gray50",
 	"red",
 	"green",
@@ -120,25 +121,28 @@ static const char *colorname[] = {
 
 	[255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
+	// more colors can be added after 255 to use with DefaultXX
 	"#cccccc",
 	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"gray90", // default foreground colour
+	"black", // default background colour
     "#222222", // 260 dark grey
     "#ffffff", // 261 white
     "#fafafa"  // 262 background color
-};
+}; */
+
+// pywal colors
+#include "/home/alex/.cache/wal/colors-wal-st.h"
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 261;
-unsigned int defaultbg = 260;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 256;
+//unsigned int defaultfg = 261;
+//unsigned int defaultbg = 260;
+//unsigned int defaultcs = 256;
+//unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
