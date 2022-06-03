@@ -9,7 +9,7 @@ static char *font = "UbuntuMonoLigaturized:pixelsize=20:antialias=true:autohint=
 static int borderpx = 2;
 
 /* background opacity */
-float alpha = 0.6;
+float alpha = 0.7;
 
 /*
  * What program is execed by st depends of these precedence rules:
