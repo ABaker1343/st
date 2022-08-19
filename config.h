@@ -5,11 +5,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "UbuntuMonoLigaturized:pixelsize=24:antialias=true:autohint=true";
+// static char *font = "UbuntuMonoLigaturized:pixelsize=24:antialias=true:autohint=true";
+static char *font = "monospace:size=14";
+// static char *font = "Sauce Code Pro Nerd Font Complete:size=14";
 static int borderpx = 2;
 
 /* background opacity */
-float alpha = 0.7;
+float alpha = 0.60;
 
 /*
  * What program is execed by st depends of these precedence rules:
